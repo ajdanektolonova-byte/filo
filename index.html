@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Философия дүйнөсү — Билим таймашы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+
+    <header class="top-header">
+        <div class="logo">ФИЛО<span>СОФИЯ</span></div>
+        <button id="soundToggle" class="sound-btn">
+            <span id="soundIcon">🔊</span>
+            <span id="soundText">Үн күйүк</span>
+        </button>
+    </header>
+
+    <main class="container">
+
+        <!-- Башкы бет -->
+        <section id="homeScreen" class="screen active">
+            <div class="hero-card">
+                <div class="hero-icon">🧠</div>
+                <p class="eyebrow">БИЛИМ • ОЙ ЖҮГҮРТҮҮ • ТААНЫП БИЛҮҮ</p>
+                <h1>Философия <span>дүйнөсүнө</span> кош келиңиз!</h1>
+                <p class="hero-description">
+                    Өз билимиңди сынап, философиялык түшүнүктөрдү канчалык
+                    деңгээлде өздөштүргөнүңдү текшер.
+                </p>
+
+                <form id="startForm" class="name-form">
+                    <label for="studentName">Студенттин аты-жөнү</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Атыңды жана фамилияңды жаз..."
+                        maxlength="40"
+                        required
+                    >
+                    <button type="submit" class="primary-btn">
+                        Оюнду баштоо <span>→</span>
+                    </button>
+                </form>
+
+                <div class="game-info">
+                    <div>
+                        <strong>30</strong>
+                        <span>Суроо</span>
+                    </div>
+                    <div>
+                        <strong>15 сек</strong>
+                        <span>Ар бир суроо</span>
+                    </div>
+                    <div>
+                        <strong>300</strong>
+                        <span>Жалпы упай</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Оюн барагы -->
+        <section id="gameScreen" class="screen">
+            <div class="game-top">
+                <div>
+                    <p class="small-label">КАТЫШУУЧУ</p>
+                    <h3 id="playerName">Студент</h3>
+                </div>
+                <div class="score-box">
+                    <span>Упай</span>
+                    <strong id="score">0</strong>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span id="questionNumber">1 / 30</span>
+                    <span id="categoryName">Философия</span>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-label">СУРОО</span>
+                    <div class="timer">
+                        <span>⏱</span>
+                        <strong id="timer">15</strong>
+                    </div>
+                </div>
+
+                <h2 id="questionText">Суроо ушул жерде көрсөтүлөт</h2>
+
+                <div id="answersContainer" class="answers-grid"></div>
+
+                <div id="feedback" class="feedback"></div>
+
+                <button id="nextBtn" class="primary-btn next-btn" disabled>
+                    Кийинки суроо →
+                </button>
+            </div>
+        </section>
+
+        <!-- Жыйынтык барагы -->
+        <section id="resultScreen" class="screen">
+            <div class="result-card">
+                <div class="result-icon">🏆</div>
+                <p class="eyebrow">ОЮН АЯКТАДЫ</p>
+                <h1>Мыкты аракет!</h1>
+                <p id="resultName" class="result-name"></p>
+
+                <div class="total-score">
+                    <strong id="finalScore">0</strong>
+                    <span>/ 300 упай</span>
+                </div>
+
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <strong id="correctCount">0</strong>
+                        <span>Туура жооп</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="wrongCount">0</strong>
+                        <span>Ката жооп</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="accuracy">0%</strong>
+                        <span>Тактык</span>
+                    </div>
+                </div>
+
+                <p id="resultMessage" class="result-message"></p>
+
+                <div class="result-buttons">
+                    <button id="restartBtn" class="primary-btn">
+                        Кайра ойноо ↻
+                    </button>
+                    <button id="leaderboardBtn" class="secondary-btn">
+                        Рейтингди көрүү
+                    </button>
+                    <button id="homeBtn" class="secondary-btn">
+                        Башкы бет
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Рейтинг барагы -->
+        <section id="leaderboardScreen" class="screen">
+            <div class="leaderboard-card">
+                <div class="result-icon">🏅</div>
+                <p class="eyebrow">МЫКТЫ КАТЫШУУЧУЛАР</p>
+                <h1>Оюндун рейтинги</h1>
+
+                <div id="leaderboardList" class="leaderboard-list"></div>
+
+                <button id="backToResultBtn" class="primary-btn">
+                    Артка кайтуу
+                </button>
+                <button id="clearLeaderboardBtn" class="secondary-btn">
+                    Рейтингди тазалоо
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ФИЛОСОФИЯ ДҮЙНӨСҮ © 2026</p>
+        <span>Ой жүгүртүү — билимдин башаты.</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
